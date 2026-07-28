@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurex Match Review</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-brand">
+      <img src="Aurex.png" alt="App Logo" class="logo-img" />
+      <div>
+        <h1>Aurex Match Review</h1>
+        <p>Every Country.</p>
+      </div>
+    </div>
+    
+    <nav id="breadcrumb">
+      <span class="crumb active" id="crumb-countries" onclick="navigateTo('countries')">All Countries</span>
+      <span class="separator" id="sep-1" style="display:none;">&gt;</span>
+      <span class="crumb" id="crumb-tournaments" style="display:none;" onclick="navigateTo('tournaments')"></span>
+      <span class="separator" id="sep-2" style="display:none;">&gt;</span>
+      <span class="crumb" id="crumb-matches" style="display:none;">Matches</span>
+    </nav>
+  </header>
+
+  <main>
+    <div class="search-container" id="search-box">
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Search through all 211 countries..." 
+        oninput="handleSearch()" 
+      />
+    </div>
+
+    <div id="loader" class="loader" style="display:none;">Fetching match records from global database...</div>
+
+    <section id="view-countries" class="view active">
+      <h2>Select a National Team</h2>
+      <div id="countriesGrid" class="grid-container"></div>
+    </section>
+
+    <section id="view-tournaments" class="view">
+      <h2 id="tournamentTitle">Tournaments</h2>
+      <div id="tournamentsGrid" class="grid-container"></div>
+    </section>
+
+    <section id="view-matches" class="view">
+      <h2 id="matchesTitle">Match History</h2>
+      <div id="matchesList" class="matches-container"></div>
+    </section>
+</main>
+
+  <script src="script.js"></script>
+</body>
+</html>
